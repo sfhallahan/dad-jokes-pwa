@@ -1,7 +1,12 @@
 import React from 'react'
+import { BottomNavContainer, HomeContainer } from 'containers'
 
 export default function App (props) {
   return (
-    <div>App is up and running</div>
+    <div>
+      <HomeContainer />
+      <BottomNavContainer />
+    </div>
+
   )
 }

@@ -1,11 +1,20 @@
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .centeredContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.siteTitle {
+  font-size: 24px;
+  grid-column: 3 / -1;
+  font-weight: 400;
+  letter-spacing: -0.63px;
+  margin: 0;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 8px 28px 1fr 8px;
+  padding: 30px 0;
 }
