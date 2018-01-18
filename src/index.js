@@ -10,9 +10,7 @@ import './styles/globalStyles.css'
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <div>
         <App />
-      </div>
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root'))

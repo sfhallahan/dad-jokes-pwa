@@ -8,13 +8,22 @@
 .siteTitle {
   font-size: 24px;
   grid-column: 3 / -1;
+  grid-row: 1;
   font-weight: 400;
   letter-spacing: -0.63px;
   margin: 0;
+  align-self: end;
 }
 
 .gridContainer {
+  height: 100%;
   display: grid;
-  grid-template-columns: 8px 28px 1fr 8px;
-  padding: 30px 0;
+  grid-template-columns: 4px 28px 1fr 4px;
+  grid-template-rows: 50px 1fr 150px 56px;
+}
+
+.standardText {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 12px;
 }

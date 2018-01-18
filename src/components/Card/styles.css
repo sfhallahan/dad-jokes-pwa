@@ -1,0 +1,13 @@
+.cardContainer {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.jokeText {
+  padding: 20px 16px;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+}

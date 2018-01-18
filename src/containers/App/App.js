@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { BottomNavContainer, HomeContainer } from 'containers'
 
 export default function App (props) {
   return (
-    <div>
+    <Fragment>
       <HomeContainer />
       <BottomNavContainer />
-    </div>
+    </Fragment>
 
   )
 }
