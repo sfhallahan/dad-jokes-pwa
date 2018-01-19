@@ -5,8 +5,8 @@ import {cardContainer, jokeText} from './styles.css'
 
 Card.propTypes = {
   jokeText: PropTypes.string.isRequired,
-  favorited: PropTypes.bool.isRequired,
-  dateReceived: PropTypes.number.isRequired,
+  favorited: PropTypes.bool,
+  dateReceived: PropTypes.number,
 }
 
 export default function Card(props) {

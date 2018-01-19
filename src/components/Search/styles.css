@@ -1,0 +1,55 @@
+.centeredCard {
+  grid-column: 2 / -2;
+  grid-row: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.searchBar {
+  background: #fff;
+  grid-column: 2 / -2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  margin-top: 25px;
+  padding: 10px 20px;
+}
+
+.searchInput {
+  border-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-bottom: solid;
+  border-width: thin;
+  border-color: rgba(0,0,0, 0.37);
+}
+
+.resultsContainer {
+  width: 100%;
+  grid-column: 2 / -2;
+  grid-row: 3 / 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px 0;
+  overflow-y: scroll;
+}
+
+.errorText {
+  justify-self: flex-end;
+  margin: auto;
+  composes: standardText from 'styles/sharedStyles.css';
+}

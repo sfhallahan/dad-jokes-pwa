@@ -9,19 +9,13 @@
       favorited: true/false
     }
   }
-  favorites: {
-    [jokeId]: {
-      jokeId,
-      jokeText,
-      dateReceived,
-    }
-  },
   search: {
     isFetching,
     error,
     searchText,
     currentPage,
     totalPages,
+    jokeIds: [],
     jokes: [
       [jokeId]: {
         jokeId,
