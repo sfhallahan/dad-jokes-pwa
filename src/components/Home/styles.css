@@ -1,14 +1,15 @@
 .centeredCard {
   grid-column: 2 / -2;
-  grid-row: 2;
+  grid-row: 2 / 4;
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .buttonContainer {
   grid-column: 2 / -2;
-  grid-row: 3;
+  grid-row: 4 / 5;
   justify-self: center;
   align-self: end;
   height: 100%;

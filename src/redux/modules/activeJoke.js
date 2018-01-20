@@ -1,8 +1,8 @@
 import { getNewJoke } from 'utils/api'
 
 const FETCHING_JOKE = 'FETCHING_JOKE'
-const FETCHING_JOKE_SUCCESS = 'FETCH_JOKE_SUCCESS'
-const FETCHING_JOKE_FAIL = 'FETCH_JOKE_FAIL'
+const FETCHING_JOKE_SUCCESS = 'FETCHING_JOKE_SUCCESS'
+const FETCHING_JOKE_FAIL = 'FETCHING_JOKE_FAIL'
 
 
 function fetchingJoke() {
@@ -19,15 +19,15 @@ function fetchingJokeFail(error) {
   }
 }
 
-function fetchingJokeSuccess(joke) {
+function fetchingJokeSuccess(newJoke) {
   return {
     type: FETCHING_JOKE_SUCCESS,
     joke: {
-      jokeId: joke.id,
-      jokeText: joke.joke,
+      jokeId: newJoke.id,
+      jokeText: newJoke.joke,
       dateReceived: Date.now(),
       favorited: false,
-    }
+    },
   }
 }
 
@@ -35,19 +35,21 @@ export function fetchNewJoke() {
   return function(dispatch, getState) {
     dispatch(fetchingJoke())
     getNewJoke()
-    .then((joke) => dispatch(fetchingJokeSuccess(joke)))
+    .then((joke) => {
+      setTimeout(() => {
+        dispatch(fetchingJokeSuccess(joke))}, 750)
+      })
     .catch((error) => dispatch(fetchingJokeFail(error)))
   }
 }
 
-
-const defaultState = {
+const initialState = {
   isFetching: true,
   error: '',
   joke: {}
 }
 
-export default function activeJoke(state = defaultState, action) {
+export default function activeJoke(state = initialState, action) {
   switch (action.type) {
     case FETCHING_JOKE:
       return {
@@ -64,10 +66,9 @@ export default function activeJoke(state = defaultState, action) {
       return {
         isFetching: false,
         error: '',
-        joke: action.joke,
+        joke: action.joke
       }
     default:
       return state
-
   }
 }

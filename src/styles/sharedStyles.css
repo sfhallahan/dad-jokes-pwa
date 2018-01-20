@@ -13,13 +13,14 @@
   letter-spacing: -0.63px;
   margin: 0;
   align-self: end;
+  color: #3949AB;
 }
 
 .gridContainer {
   height: 100%;
   display: grid;
   grid-template-columns: 4px 28px 1fr 4px;
-  grid-template-rows: 50px 1fr 150px 56px;
+  grid-template-rows: 50px 75px 1fr 150px 56px;
 }
 
 .standardText {

@@ -18,8 +18,8 @@ export default function Home(props) {
     <div className={gridContainer}>
       <h1 className={siteTitle}>DadJokes</h1>
       <div className={centeredCard}>
-      {props.isFetching 
-        ? <CircularProgress color="accent" />
+      {props.isFetching
+        ? <CircularProgress color="accent" size={50} />
         : <Card
             jokeText={props.joke.jokeText}
             favorited={props.joke.favorited}
