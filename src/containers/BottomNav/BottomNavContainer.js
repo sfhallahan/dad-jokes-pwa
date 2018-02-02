@@ -14,7 +14,6 @@ class BottomNavContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className={styles.bottomNavContainer}>
         <BottomNavigation value={this.props.activeRoute}>
