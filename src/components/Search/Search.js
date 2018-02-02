@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import Button from 'material-ui/Button'
 import { CircularProgress } from 'material-ui/Progress';
-//import { Card } from 'components'
 import SearchIcon from 'material-ui-icons/Search'
 import { Card } from 'components'
 import { gridContainer, siteTitle } from 'styles/sharedStyles.css'
-import { centeredCard, searchBar, searchInput, resultsContainer, errorText } from './styles.css'
+import { searchBar, searchInput, resultsContainer, errorText } from './styles.css'
 
 Search.propTypes = {
   isFetching: PropTypes.bool.isRequired,

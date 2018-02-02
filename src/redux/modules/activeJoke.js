@@ -35,10 +35,7 @@ export function fetchNewJoke() {
   return function(dispatch, getState) {
     dispatch(fetchingJoke())
     getNewJoke()
-    .then((joke) => {
-      setTimeout(() => {
-        dispatch(fetchingJokeSuccess(joke))}, 750)
-      })
+    .then((joke) => dispatch(fetchingJokeSuccess(joke)))
     .catch((error) => dispatch(fetchingJokeFail(error)))
   }
 }

@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import HomeIcon from 'material-ui-icons/Home'
 import SearchIcon from 'material-ui-icons/Search'
 import { push } from 'react-router-redux'
-import { Link } from 'react-router-dom'
 import * as styles from './styles.css'
 
 
