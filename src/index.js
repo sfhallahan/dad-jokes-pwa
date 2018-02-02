@@ -13,3 +13,12 @@ ReactDOM.render(
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root'))
+
+  if('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+               .register('/sw.js')
+               .then((registration) => console.log('Registration successful!'))
+               .catch((error) => console.log('Error with SW Registration'))
+    })
+  }
