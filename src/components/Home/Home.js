@@ -11,6 +11,7 @@ Home.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   joke: PropTypes.object.isRequired,
   handleRefresh: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
 }
 
 export default function Home(props) {
@@ -21,6 +22,7 @@ export default function Home(props) {
       {props.isFetching
         ? <CircularProgress color="accent" size={50} />
         : <Card
+            error={props.error}
             jokeText={props.joke.jokeText}
             favorited={props.joke.favorited}
             dateReceived={props.joke.dateReceived}/>
