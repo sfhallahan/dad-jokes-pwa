@@ -12,4 +12,7 @@ ReactDOM.render(
         <App />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root'))
+document.getElementById('root'))
+
+
+// Add your service worker here
