@@ -13,6 +13,7 @@ class HomeContainer extends React.Component {
       <Home
         isFetching={this.props.isFetching}
         joke={this.props.joke}
+        error={this.props.error}
         handleRefresh={() => this.props.dispatch(fetchNewJoke())} />
     )
   }
@@ -21,7 +22,8 @@ class HomeContainer extends React.Component {
 function mapStateToProps({ activeJoke }) {
   return {
     isFetching: activeJoke.isFetching,
-    joke: activeJoke.joke
+    joke: activeJoke.joke,
+    error: activeJoke.error,
   }
 }
 

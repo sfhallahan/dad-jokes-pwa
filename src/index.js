@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import App from './containers/App/App'
 import store, { history } from './redux/store'
-import registerServiceWorker from './registerServiceWorker'
 import './styles/globalStyles.css'
 
 ReactDOM.render(
@@ -15,4 +14,11 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'))
 
-registerServiceWorker()
+  if('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+               .register('/sw.js')
+               .then((registration) => console.log('Registration successful!'))
+               .catch((error) => console.log('Error with SW Registration'))
+    })
+  }

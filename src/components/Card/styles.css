@@ -12,3 +12,10 @@
   font-weight: 300;
   font-style: italic;
 }
+
+.errorText {
+  padding: 20px 16px;
+  font-size: 20px;
+  font-weight: 400;
+  color: red;
+}

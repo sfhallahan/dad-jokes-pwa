@@ -11,13 +11,11 @@ headers: {
 export function getNewJoke() {
   return axios.get(hostname, requestHeaders)
               .then((response) => {
-                console.log(response)
                 return response.data})
 }
 
 export function getSearchResults(searchText, currentPage) {
   const searchUrl = buildSearchUrl(searchText, currentPage)
-  console.log(searchUrl)
   return axios.get(searchUrl, requestHeaders)
               .then((response) => response.data)
 
