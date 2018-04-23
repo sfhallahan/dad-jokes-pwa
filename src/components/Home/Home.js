@@ -34,7 +34,7 @@ export default function Home(props) {
       </div>
       <div className={buttonContainer}>
         <p className={standardText}>{"LOL, Another!"}</p>
-        <Button fab color="primary" aria-label="refresh" onClick={props.handleRefresh}>
+        <Button variant="fab" color="primary" aria-label="refresh" onClick={props.handleRefresh}>
           <AutorenewIcon />
         </Button>
       </div>
