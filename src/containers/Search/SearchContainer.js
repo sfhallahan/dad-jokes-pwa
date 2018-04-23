@@ -1,45 +1,46 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import { Search } from 'components'
-import { fetchAndHandleSearch } from 'redux/modules/search'
+import React from "react";
+import { connect } from "react-redux";
+import { Search } from "components";
+import { fetchAndHandleSearch } from "redux/modules/search";
 
 class SearchContainer extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      searchInputText: ''
-    }
+      searchInputText: ""
+    };
   }
 
-  handleChange = (e) => {this.setState({searchInputText: e.target.value})}
+  handleChange = e => {
+    this.setState({ searchInputText: e.target.value });
+  };
 
-  handleSearch = (e) => {
-    e.preventDefault()
-    this.props.dispatch(fetchAndHandleSearch(this.state.searchInputText))
-    document.getElementById("searchInput").blur()
-  }
+  handleSearch = e => {
+    e.preventDefault();
+    this.props.dispatch(fetchAndHandleSearch(this.state.searchInputText));
+    document.getElementById("searchInput").blur();
+  };
 
-  render () {
-    console.log(this.props)
+  render() {
     return (
       <Search
         onSearch={this.handleSearch}
         onChange={this.handleChange}
         searchInputText={this.state.searchInputText}
         jokes={this.props.jokes}
-        isFetching={this.props.isFetching} />
-    )
+        isFetching={this.props.isFetching}
+      />
+    );
   }
 }
 
-function mapStateToProps({search}) {
+function mapStateToProps({ search }) {
   return {
     isFetching: search.isFetching,
     error: search.error,
     jokes: search.jokes,
-    totalJokes: search.totalJokes,
-  }
+    totalJokes: search.totalJokes
+  };
 }
 
-
-export default connect(mapStateToProps)(SearchContainer)
+export default connect(mapStateToProps)(SearchContainer);

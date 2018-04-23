@@ -1,12 +1,10 @@
 import React from "react";
 import Search from "../Search/Search";
 import Card from "../Card/Card";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import { CircularProgress } from "material-ui";
 
 describe("Search Component", () => {
-	const mockOnSubmit = jest.fn();
-	const mockOnChange = jest.fn();
 	const initialSearchLoad = shallow(
 		<Search
 			isFetching={false}
@@ -83,5 +81,19 @@ describe("Search Component", () => {
 		);
 
 		expect(searchWithResults.find(Card).length).toEqual(2);
+	});
+
+	it.skip("should focus on the input box when the form is clicked", () => {
+		const spyOnClickSearch = mount(
+			<Search
+				isFetching={false}
+				searchInputText=""
+				jokes={[]}
+				onChange={jest.fn()}
+				onSearch={jest.fn()}
+			/>
+		);
+		spyOnClickSearch.find("form").simulate("click");
+		expect(spyOnClickSearch.find("searchInput")).toBe(document.activeElement);
 	});
 });

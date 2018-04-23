@@ -15,18 +15,20 @@ Search.propTypes = {
 };
 
 export default function Search(props) {
+	let searchInputRef = React.createRef();
+
+	function handleClick() {
+		searchInputRef.current.focus();
+	}
 	return (
 		<div className={gridContainer}>
 			<h1 className={siteTitle} id="siteTitle">
 				DadJokes
 			</h1>
-			<form
-				className={searchBar}
-				onSubmit={e => props.onSearch(e)}
-				onClick={() => document.getElementById("searchInput").focus()}
-			>
+			<form className={searchBar} onSubmit={e => props.onSearch(e)} onClick={handleClick}>
 				<input
 					id="searchInput"
+					ref={searchInputRef}
 					className={searchInput}
 					type="text"
 					value={props.searchInputText}
