@@ -5,11 +5,11 @@
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.17.1",
-    "babel-core": "6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
-    "babel-preset-react-app": "^3.1.0",
+    "babel-preset-react-app": "^3.1.2",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
@@ -55,7 +55,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "test-coverage": "node scripts/test.js --env=jsdom --coverage",
-    "clean": "node scripts/clean.js"
+    "clean": "node scripts/clean.js",
+    "cypress:open": "cypress open"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -106,8 +107,9 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "cypress": "^3.1.0",
+    "enzyme": "^3.4.3",
+    "enzyme-adapter-react-16": "^1.2.0",
     "fetch-mock": "^6.3.0",
     "identity-obj-proxy": "^3.0.0",
     "redux-mock-store": "^1.5.1",
